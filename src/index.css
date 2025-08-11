@@ -188,6 +188,34 @@
     }
   }
 
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { 
+      opacity: 0.6; 
+      transform: scale(1); 
+    }
+    50% { 
+      opacity: 1; 
+      transform: scale(1.2); 
+    }
+  }
+
+  @keyframes magnetic {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+    100% { transform: translateY(0px); }
+  }
+
   /* Animation classes */
   .animate-sparkle {
     animation: sparkle 2s ease-in-out infinite;
@@ -199,5 +227,60 @@
   
   .animate-slide-in-up {
     animation: slide-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  /* Interactive animations */
+  .magnetic-button {
+    transition: var(--transition-smooth);
+  }
+  
+  .magnetic-button:hover {
+    animation: magnetic 0.3s ease-in-out;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Testimonial card animation */
+  .testimonial-card {
+    transition: var(--transition-smooth);
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  /* Slider navigation */
+  .slider-nav {
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+  }
+  
+  .slider-nav:hover {
+    background: rgba(var(--glass-bg));
+    transform: scale(1.1);
+  }
+
+  .left-arrow:hover {
+    transform: translateX(-2px) scale(1.1);
+  }
+
+  .right-arrow:hover {
+    transform: translateX(2px) scale(1.1);
   }
 }
